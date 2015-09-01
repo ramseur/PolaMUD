@@ -6,7 +6,7 @@ using System.Reflection;
 
 namespace PolaMUD
 {
-	public class Affect : Thing
+	public class Affect : Entity
 	{
 		public int Level = 1;
 		public Mob Owner;

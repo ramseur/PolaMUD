@@ -5,7 +5,7 @@ using System.Text;
 
 namespace PolaMUD
 {
-	public class Terrain : Thing
+	public class Terrain : Entity
 	{
 		public string Name;
 		public int Delay;

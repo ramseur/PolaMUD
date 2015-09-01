@@ -35,6 +35,8 @@ namespace PolaMUD
 
         public bool Authenticate(string inputPassword)
         {
+          
+             
             bool retVal = false;
 
             string inputSaltedPassword = Authentication.GenerateSaltedHash(inputPassword, salt);

@@ -5,10 +5,10 @@ using System.Text;
 
 namespace PolaMUD
 {
-	public class Exit : Thing
+	public class Exit : Entity
 	{
-		public int FromRoom;
-		public int ToRoom;
+		public long FromRoom;
+		public long ToRoom;
 
 		public bool Visible = true;
 
@@ -22,13 +22,13 @@ namespace PolaMUD
 		{
 		}
 
-		public Exit(int toRoom)
+		public Exit(long toRoom)
 		{
 			ToRoom = toRoom;
             Name = "Exit to " + toRoom;
 		}
 
-		public Exit(int fromRoom, int toRoom)
+		public Exit(long fromRoom, long toRoom)
 		{
 			FromRoom = fromRoom;
 			ToRoom = toRoom;

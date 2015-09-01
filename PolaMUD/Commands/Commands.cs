@@ -79,7 +79,7 @@ namespace PolaMUD
                 if (Parser.GetArgument(text, 3).Text == "list")
                 {
                     int count = 1;
-                    foreach (Thing thing in Global.Things)
+                    foreach (Entity thing in Global.Entites)
                     {
                         user.SendMessage(count + ".  " + "[" + thing.Name + "] #" + thing.IndexNumber + "; type: " + thing.GetType() + "\n\r");
                         count++;

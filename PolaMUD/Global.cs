@@ -12,11 +12,11 @@ namespace PolaMUD
         public static GameLoop GameLoop;
 		public static Commands Commands = new Commands();
 
-        public static List<Thing> Things = new List<Thing>();
-        public static Dictionary<int, Area> AreaTable = new Dictionary<int, Area>();
-        public static Dictionary<int, Room> RoomTable = new Dictionary<int, Room>();
-        public static Dictionary<int, XmlNode> MobLoadTable = new Dictionary<int, XmlNode>();
-        public static Dictionary<int, object> ObjLoadTable = new Dictionary<int, object>();
+        public static List<Entity> Entites = new List<Entity>();
+        public static Dictionary<long, Area> AreaTable = new Dictionary<long, Area>();
+        public static Dictionary<long, Room> RoomTable = new Dictionary<long, Room>();
+        public static Dictionary<long, XmlNode> MobLoadTable = new Dictionary<long, XmlNode>();
+        public static Dictionary<long, object> ObjLoadTable = new Dictionary<long, object>();
         public static Dictionary<string, Skill> SkillTable = new Dictionary<string, Skill>();
         public static Dictionary<string, Terrain> TerrainTable = new Dictionary<string, Terrain>();
         public static List<Mob> Mobs = new List<Mob>();
@@ -46,7 +46,7 @@ namespace PolaMUD
             Server.Application.Error(message);
         }
 
-        public static Room GetRoom(int indexNumber)
+        public static Room GetRoom(long indexNumber)
 		{
 			if (RoomTable.ContainsKey(indexNumber))
 			{

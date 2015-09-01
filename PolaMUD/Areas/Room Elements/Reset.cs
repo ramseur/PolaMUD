@@ -5,7 +5,7 @@ using System.Text;
 
 namespace PolaMUD
 {
-	public abstract class Reset : Thing
+	public abstract class Reset : Entity
 	{
 		public Room Room;
 		public int Respawn = 5;

@@ -9,7 +9,7 @@ using System.Runtime.Serialization;
 namespace PolaMUD
 {
     [Serializable]
-	public partial class Mob : MovableThing, ISerializable
+	public partial class Mob : MovableEntity, ISerializable
 	{
 		public int Level = 1;
 		public decimal Experience = 0;
@@ -85,7 +85,7 @@ namespace PolaMUD
 		/// Creates a new template for the specified mob and adds it to the reference table of every mob template. Use Loader.NewMob() to create a new instance of a mob.
 		/// </summary>
 		/// <param name="index"></param>
-        public Mob(int index)
+        public Mob(long index)
         {
 			IndexNumber = index;
             Load(Global.MobLoadTable[index]);

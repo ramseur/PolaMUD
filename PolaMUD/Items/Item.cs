@@ -5,7 +5,7 @@ using System.Text;
 
 namespace PolaMUD.Items
 {
-    public class Item : Thing
+    public class Item : Entity
     {
     }
 }

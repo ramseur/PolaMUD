@@ -6,7 +6,7 @@ using System.Xml;
 
 namespace PolaMUD
 {
-	public class Room : Thing
+	public class Room : Entity
 	{
 		public Area Area;
 		public string Description;
@@ -19,7 +19,7 @@ namespace PolaMUD
         /// Creates a new room with the specified IndexNumber and adds it to Global.RoomTable.
         /// </summary>
         /// <param name="number"></param>
-		public Room(int number)
+		public Room(long number)
 		{
 			IndexNumber = number;
 			try
@@ -107,9 +107,9 @@ namespace PolaMUD
         /// <param name="reference">The Type to search for (Mob, Player, etc.)</param>
         /// <param name="name">Name to match</param>
         /// <returns></returns>
-        public Thing GetThing(Type reference, string name)
+        public Entity GetThing(Type reference, string name)
         {
-            foreach (Thing thing in Contents)
+            foreach (Entity thing in Contents)
             {
                 if (thing.GetType() == reference || thing.GetType().BaseType == reference)
                 {
@@ -203,7 +203,7 @@ namespace PolaMUD
             player.SendMobileMessage("~\n\r");
 
             player.SendMobileMessage("t=roomcontents=");
-			foreach (Thing thing in Contents)
+			foreach (Entity thing in Contents)
 			{
                 if (thing is Mob)
                 {

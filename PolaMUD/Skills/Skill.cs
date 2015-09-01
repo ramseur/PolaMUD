@@ -5,7 +5,7 @@ using System.Text;
 
 namespace PolaMUD
 {
-	public class Skill : Thing
+	public class Skill : Entity
 	{
 		public SkillType SkillType;
 		public int LearnedLevel = 999;

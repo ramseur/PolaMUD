@@ -7,21 +7,21 @@ namespace PolaMUD
 {
     public class MovableEntity : Entity
     {
-        /*public delegate void PreMove(Thing targetLocation);
+        /*public delegate void PreMove(Entity targetLocation);
         public event PreMove PreMove;
-        public delegate void OnMove(Thing targetLocation);
+        public delegate void OnMove(Entity targetLocation);
         public event OnMove OnMove;*/
 
-        public bool CanMove(Entity targetThing)
+        public bool CanMove(Entity targetEntity)
         {
             return true;
         }
 
-        public bool Move(Entity targetThing)
+        public bool Move(Entity targetEntity)
         {
             var currentLocation = Location;
 
-            if (!CanMove(targetThing))
+            if (!CanMove(targetEntity))
             {
                 return false;
             }
@@ -32,15 +32,15 @@ namespace PolaMUD
                 Location = null;
             }
 
-            targetThing.Contents.Add(this);
-            Location = targetThing;
+            targetEntity.Contents.Add(this);
+            Location = targetEntity;
 
             return true;
         }
 
-        public bool Move(Entity targetThing, string message)
+        public bool Move(Entity targetEntity, string message)
         {
-            var ret = Move(targetThing);
+            var ret = Move(targetEntity);
             return ret;
         }
     }

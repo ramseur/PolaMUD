@@ -102,12 +102,12 @@ namespace PolaMUD
         }
 
          /// <summary>
-        /// Get a Thing from the room with the provided Type (Mob, Player, etc.) that matches Name.
+        /// Get a Entity from the room with the provided Type (Mob, Player, etc.) that matches Name.
         /// </summary>
         /// <param name="reference">The Type to search for (Mob, Player, etc.)</param>
         /// <param name="name">Name to match</param>
         /// <returns></returns>
-        public Entity GetThing(Type reference, string name)
+        public Entity GetEntity(Type reference, string name)
         {
             foreach (Entity thing in Contents)
             {
